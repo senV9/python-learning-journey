@@ -1,71 +1,75 @@
 import time
 
-def pertambahan(a, b):
+def addition(a, b):
     try:
-        a = int(input("Masukkan angka pertama: "))
-        b = int(input("Masukkan angka kedua: "))
-        hasil = a + b
-        print(f"Hasil pertambahan: {hasil}")
+        a = int(input("Enter the first number: "))
+        b = int(input("Enter the second number: "))
+        result = a + b
+        print(f"Addition result: {result}")
         time.sleep(2)
     except ValueError:
-        print("Input tidak valid. Harap masukkan angka.")
+        print("Invalid input. Please enter a number.")
 
-def pengurangan(a,b):
+def subtraction(a, b):
     try:
-        a = int(input("Masukkan angka pertama: "))
-        b = int(input("Masukkan angka kedua: "))
-        hasil = a - b
-        print(f"Hasil pertambahan: {hasil}")
+        a = int(input("Enter the first number: "))
+        b = int(input("Enter the second number: "))
+        result = a - b
+        print(f"Subtraction result: {result}")
         time.sleep(2)
     except ValueError:
-        print("Input tidak valid. Harap masukkan angka.")
+        print("Invalid input. Please enter a number.")
 
-def perkalian(a, b):
+def multiplication(a, b):
     try:
-        a = int(input("Masukkan angka pertama: "))
-        b = int(input("Masukkan angka kedua: "))
-        hasil = a * b
-        print(f"Hasil pertambahan: {hasil}")
+        a = int(input("Enter the first number: "))
+        b = int(input("Enter the second number: "))
+        result = a * b
+        print(f"Multiplication result: {result}")
         time.sleep(2)
     except ValueError:
-        print("Input tidak valid. Harap masukkan angka.")
+        print("Invalid input. Please enter a number.")
 
-def pembagian(a, b):
+def division(a, b):
     try:
-        a = int(input("Masukkan angka pertama: "))
-        b = int(input("Masukkan angka kedua: "))
-        hasil = a / b
-        print(f"Hasil pertambahan: {hasil}")
+        a = int(input("Enter the first number: "))
+        b = int(input("Enter the second number: "))
+        result = a / b
+        print(f"Division result: {result}")
         time.sleep(2)
     except ZeroDivisionError:
-        print("Input ERROR: Jagan membagi dengan angka 0")
+        print("ERROR: Do not divide by zero.")
     except ValueError:
-        print("Input tidak valid. Harap masukkan angka.")
+        print("Invalid input. Please enter a number.")
 
-opsi = ["1.Pertambahan","2.Pengurangan","3.Perkalian","4.Pembagian","5.Keluar"]
+options = [
+    "1. Addition",
+    "2. Subtraction",
+    "3. Multiplication",
+    "4. Division",
+    "5. Exit"
+]
 
 while True:
-    print("\n",5*"=","BASIC CLI CALC PYTHON",5*"=")
-    for i in opsi:
+    print("\n", "="*5, "BASIC CLI PYTHON CALCULATOR", "="*5)
+    for i in options:
         print(i)
     
     try:
-        pilihOpsi = int(input("\nPilih Opsi: "))
+        choice = int(input("\nChoose an option: "))
         
-        if (pilihOpsi >= 1) and (pilihOpsi <= 5):
-            if pilihOpsi == 1:
-                pertambahan(0,0)
-            elif pilihOpsi == 2:
-                pengurangan(0,0)
-            elif pilihOpsi == 3:
-                perkalian(0,0)
-            elif pilihOpsi == 4:
-                pembagian(0,0)
-            elif pilihOpsi == 5:
+        if 1 <= choice <= 5:
+            if choice == 1:
+                addition(0, 0)
+            elif choice == 2:
+                subtraction(0, 0)
+            elif choice == 3:
+                multiplication(0, 0)
+            elif choice == 4:
+                division(0, 0)
+            elif choice == 5:
                 break
         else:
-            print(f"ERROR: Pilihan {pilihOpsi} tidak di temuka")
+            print(f"ERROR: Option {choice} not found.")
     except ValueError:
-        print("Input tidak valid. Harap masukkan angka.")
-
-
+        print("Invalid input. Please enter a number.")
